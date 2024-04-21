@@ -5,17 +5,13 @@ var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130]];
 var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attended a school seminar", 0]];
 
-
 var displayPoints = document.getElementById("point_display");
 displayPoints.textContent = userPoints;
-
-/*var displayStreak = document.getElementById("streak_display");
-displayStreak.textContent = userStreak;
-//HABITS*/
 
 leaderboard();
 streakDisplay();
 updateHabitStreakAndPoints();
+updateWeeklyHabitStreakAndPoints();
 streakCheck();
 
 
@@ -31,8 +27,6 @@ function getHabits(){
 }
 
 //when the checkbox for a habit is clicked, to update habit streak and points
-//habit is a parameter that you need to add in the html code
-//this MUST be the exact name of the habit (case sensitive) 
 function updateHabitStreakAndPoints(habit){
     userPoints +=5;
     var habitLocation;
@@ -57,6 +51,7 @@ function streakDisplay(){
         }
     }
 }
+
 //when user clicks add habit -- this will be a STRING
 function addWeeklyHabit(newHabit){
     weeklyHabitMatrix.push([newHabit, 0]);
@@ -68,8 +63,6 @@ function getWeeklyHabits(){
 }
 
 //when the checkbox for a habit is clicked, to update habit streak and points
-//habit is a parameter that you need to add in the html code
-//this MUST be the exact name of the habit (case sensitive) 
 function updateWeeklyHabitStreakAndPoints(habit){
     userPoints +=10;
     var habitLocation;
@@ -99,11 +92,11 @@ async function todaysDate(){
 function streakCheck(){
     for(var i = 0; i < habitMatrix.length; i++){
         if(habitMatrix[i][1]%7 == 0){
-            //var streak = habit;
-            //USE HTML TO PRINT NOTIFICATION "Congrats! You hit a [streak] day streak with a habit! +15 points"
+            //USE HTML TO PRINT NOTIFICATION "Congrats! You hit a streak milestone with a habit! +15 points"
             userPoints += 15;
         }
     }
+    return true;
 }
 
 
