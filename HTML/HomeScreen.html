@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header with Icons</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylsheet" href="Hackathon/CSS/HomeScreen.css">
     <style>
         .column1 {
             float: left;
@@ -98,7 +99,7 @@
             margin-left: 20px;
             width: 50px;
             height: 30px;
-            color:#292f37;
+            color: #292f37;
         }
 
         .addNewDailyHabitButton:hover {
@@ -108,7 +109,7 @@
         .habitInputBox {
             margin-top: 18px;
             margin-left: 6%;
-            width:300px;
+            width: 300px;
             height: 30px;
         }
 
@@ -126,6 +127,12 @@
 
         body {
             font-family: Arial, sans-serif;
+            width: 100%;
+            height: 100vh;
+            background-image: url("https://img.freepik.com/free-vector/gradient-blue-background_23-2149333533.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .container {
@@ -168,11 +175,89 @@
             text-decoration: underline;
         }
 
-        .bluetext {
-            color: #6ea9e4
+        .whitetext {
+            color: #fff;
         }
 
+        .bluetext {
+            color: #6ea9e4;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
 
+        }
+
+        .inputcontainer {
+            margin: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .textcontainer {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 50px 100px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+            font-size: 45px;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: white;
+            border: 10px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 87px;
+            text-align: center;
+            color: white;
+        }
+        h2{
+            font-size: 35px;
+            color:black;
+        }
     </style>
 </head>
 
@@ -186,12 +271,13 @@
                     <li><a href="./HabitsScreen.html"><img
                                 src="https://static-00.iconduck.com/assets.00/white-heavy-check-mark-emoji-512x512-6d5z9les.png"
                                 width="20" heigth="20"> Habits</a></li>
-                    <li><a href="./LeaderboardScreen.html"><img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
-                                width="20" height="20"> Leaderboard</a></li>
-                    <li><a href="StreaksScreen.html"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
-                        width="20" height="20"> Streak</a></li>
-                    <li><img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
-                        width="25" height="25"> Points</li>
+                    <li><a href="./LeaderboardScreen.html"><img
+                                src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png" width="20"
+                                height="20"> Leaderboard</a></li>
+                    <li><a href="StreaksScreen.html"><img
+                                src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
+                                width="20" height="20"> Streak</a></li>
+                    <li><img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png" width="25" height="25"> Points</li>
                     <li id="point_display">#</li>
                     <script src="script.js"></script>
                 </ul>
@@ -204,23 +290,23 @@
             <a href="./HabitsScreen.html" class="btn">Start Setting Up Your Habits</a>
         </div>
         <div class="sidebar">
-            <h2>How To Use Routine Sync</h2><br>
+            <h2>How To Use Routine Sync:</h2><br>
             <ul>
                 <li>
                     <img src="https://static-00.iconduck.com/assets.00/white-heavy-check-mark-emoji-512x512-6d5z9les.png"
-                    width="20" heigth="20"> Add habits that you want to master to your list
+                        width="20" heigth="20"> Add habits that you want to master to your list
                 </li><br>
                 <li>
-                    <img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
-                        width="25" height="25"> Earn points for completed habits
+                    <img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png" width="25" height="25"> Earn points for
+                    completed habits
                 </li><br>
                 <li>
-                    <img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
-                    width="20" height="20"> Keep your streak alive by working onyour habits every day
+                    <img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png" width="20"
+                        height="20"> Keep your streak alive by working onyour habits every day
                 </li><br>
                 <li>
-                    <img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
-                    width="20" height="20"> Compete against your friends for spots on the Leaderboard!
+                    <img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png" width="20" height="20">
+                    Compete against your friends for spots on the Leaderboard!
                 </li>
             </ul>
         </div>
