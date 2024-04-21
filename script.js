@@ -1,7 +1,12 @@
 var userPoints = 0;
 var userName = "";
 var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
+<<<<<<< Updated upstream
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130]];
+=======
+var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attended a school seminar", 0]];
+var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Billy", 125], ["Sam", 130]];
+>>>>>>> Stashed changes
 
 var displayStreak = document.getElementById("streak_display");
 displayStreak.textContent = userPoints;
@@ -35,6 +40,7 @@ function updateHabitStreakAndPoints(habit){
     }
 }
 
+<<<<<<< Updated upstream
 function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
@@ -51,6 +57,30 @@ function streakDisplay(){
         }
     }
 
+=======
+//when user clicks add habit -- this will be a STRING
+function addWeeklyHabit(newHabit){
+    //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
+    weeklyHabitMatrix.push([newHabit, 0]);
+}
+
+//returns the list of user's habits
+function getWeeklyHabits(){
+    return weeklyHabitMatrix;
+}
+
+//when the checkbox for a habit is clicked, to update habit streak and points
+//habit is a parameter that you need to add in the html code
+//this MUST be the exact name of the habit (case sensitive) 
+function updateWeeklyHabitStreakAndPoints(habit){
+    userPoints +=10;
+    var habitLocation;
+    for(var i = 0; i < weeklyHabitMatrix.length; i++){
+        if(weeklyHabitMatrix[i][0] === habit){
+            weeklyHabitMatrix[i][1] += 1; 
+        }     
+    }
+>>>>>>> Stashed changes
 }
 
 //to display date on website
