@@ -1,12 +1,9 @@
 var userPoints = 0;
 var userName = "";
 var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
-<<<<<<< Updated upstream
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130]];
-=======
 var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attended a school seminar", 0]];
-var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Billy", 125], ["Sam", 130]];
->>>>>>> Stashed changes
+
 
 var displayStreak = document.getElementById("streak_display");
 displayStreak.textContent = userPoints;
@@ -40,7 +37,6 @@ function updateHabitStreakAndPoints(habit){
     }
 }
 
-<<<<<<< Updated upstream
 function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
@@ -56,8 +52,7 @@ function streakDisplay(){
             streakElement.textContent = habitMatrix[i][1];
         }
     }
-
-=======
+}
 //when user clicks add habit -- this will be a STRING
 function addWeeklyHabit(newHabit){
     //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
@@ -80,7 +75,6 @@ function updateWeeklyHabitStreakAndPoints(habit){
             weeklyHabitMatrix[i][1] += 1; 
         }     
     }
->>>>>>> Stashed changes
 }
 
 //to display date on website
