@@ -1,12 +1,11 @@
-var userPoints = 0;
+let userPoints = 0;
 var userStreak = 0;
 var userName = document.getElementById("textInput");
 var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130], ["Mark", 85], ["Jim", 50]];
 var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attended a school seminar", 0]];
 
-var displayPoints = document.getElementById("point_display");
-displayPoints.textContent = userPoints;
+
 
 leaderboard();
 streakDisplay();
@@ -14,7 +13,10 @@ updateHabitStreakAndPoints();
 updateWeeklyHabitStreakAndPoints();
 streakCheck();
 
-
+function updatePoints(){
+    var displayPoints = document.getElementById("point_display");
+    displayPoints.innerText = userPoints;
+}
 
 //when user clicks add habit -- this will be a STRING
 function addHabit(newHabit){
@@ -26,9 +28,17 @@ function getHabits(){
     return habitMatrix;
 }
 
+function returnPoints(){
+    return userPoints;
+}
+
 //when the checkbox for a habit is clicked, to update habit streak and points
-function updateHabitStreakAndPoints(habit){
-    userPoints +=5;
+function updateHabitStreakAndPoints(habit, points){    
+    var displayPoints = document.getElementById("point_display");
+    let upoints = Number(displayPoints.innerText);
+    upoints += points;
+    userPoints = upoints;    
+    updatePoints();
     var habitLocation;
     for(var i = 0; i < habitMatrix.length; i++){
         if(habitMatrix[i][0] === habit){

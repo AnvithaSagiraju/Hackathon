@@ -48,6 +48,8 @@
             text-align: center;
             font-size: 50px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color:#ddd;
+            padding: 10px;
         }
 
         .checkboxLabel {
@@ -63,7 +65,7 @@
         }
 
         .habitsList {
-            padding: 10px;
+            padding: 30px;
         }
 
         .addNewDailyHabitButton {
@@ -79,6 +81,7 @@
 
         body {
             font-family: Arial, sans-serif;
+            background-image: url("https://wallpapercave.com/wp/VefkydU.jpg");
         }
 
         .container {
@@ -126,11 +129,13 @@
         }
         
         table {
-            width: 100%;
+            width: 90%;
+            align-self: center;
             border-collapse: collapse;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin:auto;
         }
 
         th, td {
@@ -163,6 +168,7 @@
             justify-content: center;
             align-items: center; 
         }
+
         .secondcircle {
             width: 20px; 
             height: 20px; 
@@ -186,6 +192,14 @@
             display: flex; 
             justify-content: center;
             align-items: center; 
+        }
+
+
+        .fire{
+            padding-top:10px;
+            width:75px;
+            height:75px;
+
         }
     </style>
 </head>
@@ -216,13 +230,12 @@
     </header>
     <h2>
         <img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
-        width="75"
-        height="75">
+        class="fire">
         Streaks
         <img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
-        width="75"
-        height="75">
+        class="fire">
     </h2>
+    <br>
     <table>
         <thead>
             <tr>

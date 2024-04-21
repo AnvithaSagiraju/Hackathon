@@ -20,6 +20,7 @@
             border-color: #cacaca;
             height: 520px;
             padding-left: 30px;
+            background-image: url("https://wallpapercave.com/wp/wp661789.png");
 
         }
 
@@ -33,7 +34,7 @@
             border-color: #cacaca;
             height: 520px;
             padding-left: 30px;
-
+            background-image: url("https://wallpapercave.com/wp/wp661789.png");
         }
 
         .checkbox {
@@ -188,6 +189,7 @@
                 checkbox.type = "checkbox";
                 checkbox.setAttribute("id", "taskCheckbox");
                 checkbox.setAttribute("class", "checkbox");
+                checkbox.setAttribute("onclick",`pointUpdate("${habit[0]}")`);
                 checkbox.value = habit[0];
                 const checkboxLabel = document.createElement("label");
                 checkboxLabel.setAttribute("for", "taskCheckbox");
@@ -213,6 +215,7 @@
                 checkbox.type = "checkbox";
                 checkbox.setAttribute("id", "weeklyTaskCheckbox");
                 checkbox.setAttribute("class", "checkbox");
+                checkbox.setAttribute("onclick",`weeklyPointUpdate("${habit[0]}")`);
                 checkbox.value = habit[0];
                 const checkboxLabel = document.createElement("label");
                 checkboxLabel.setAttribute("for", "weeklyTaskCheckbox");
@@ -288,10 +291,22 @@
             weeklyCheckboxes.innerHTML = "";
             displayHabits();
         }
+
+        function pointUpdate(habit){
+            updateHabitStreakAndPoints(habit, 5);
+        }
+        
+        function weeklyPointUpdate(habit){
+            updateHabitStreakAndPoints(habit, 10);
+        }
+        function displayHabitsandPoints(){
+            displayHabits();
+            updatePoints();
+        }
     </script>
 </head>
 
-<body onload="displayHabits()">
+<body onload="displayHabitsandPoints()">
 
     <header class="site-header">
         <div class="container">
@@ -311,7 +326,7 @@
                                 width="20" height="20"> Streak</a></li>
                     <li><img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
                         width="25" height="25"> Points</li>
-                    <li id="point_display">#</li>
+                    <li id="point_display">0</li>
                     <script src="../script.js"></script>
                 </ul>
             </nav>
