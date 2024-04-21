@@ -5,7 +5,7 @@ var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Bil
 
 var displayStreak = document.getElementById("streak_display");
 displayStreak.textContent = userPoints;
-//HABITS
+//HABITS STUFF
 
 leaderboard();
 streakDisplay();
