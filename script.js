@@ -77,7 +77,7 @@ function streakCheck(){
 
 //this makes the array of other users ordered from least to greatest in order of points
 //use HTML to print these (access these somehow?)
-//function leaderboard(){
+function leaderboard(){
     otherUsers.push(["User", userPoints]);
     otherUsers.sort((a, b) => b[1] - a[1]);
 
@@ -93,4 +93,4 @@ function streakCheck(){
         }
     }
     //IF SHOUTOUT BUTTON CLICKED, GIVE NOTIFICATION "You gave your friend a shoutout!"
-//}
+}
