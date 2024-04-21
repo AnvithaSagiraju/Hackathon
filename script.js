@@ -10,7 +10,7 @@ var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Bil
 function addHabit(){
     //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
     const newHabit = document.getElementById('habitInput').value 
-    habitArray.push([newHabit, 0]);
+    habitMatrix.push([newHabit, 0]);
 }
 
 //when the checkbox for a habit is clicked, to update habit streak and points
@@ -41,7 +41,7 @@ async function todaysDate(){
 
 //STREAKS
 
-//checks if streak is divisible by 10
+//checks if streak is divisible by 7
 function streakCheck(){
     for(var i = 0; i < habitMatrix.length; i++){
         if(habitMatrix[i][1]%7 == 0){
@@ -58,9 +58,11 @@ function streakCheck(){
 //this makes the array of other users ordered from least to greatest in order of points
 //use HTML to print these (access these somehow?)
 function leaderbord(){
+    otherUsers.push(["User", userPoints]);
+    otherUsers.sort((a, b) => b[1] - a[1]);
     for(var i = 0; i < habitMatrix.length; i++){
         if(otherUsers[i][1] < userPoints){
-            habitMatrix.splice([i], 0, ["User", points]);
+            habitMatrix.splice([i], 0, ["User", userPoints]);
         }
     }
     //IF SHOUTOUT BUTTON CLICKED, GIVE NOTIFICATION "You gave your friend a shoutout!"
