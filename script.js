@@ -39,10 +39,16 @@ function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
         var streakElement = document.getElementById("habit_streak" + (i + 1));
-        streakElement.textContent = habitMatrix[i][1];
+        //streakElement.textContent = habitMatrix[i][1];
     
         var nameElement = document.getElementById("habit_name" + (i + 1));
-        nameElement.textContent = habitMatrix[i][0];
+        //nameElement.textContent = habitMatrix[i][0];
+
+        if (streakElement && nameElement) {
+            // Update leaderboard name and score based on otherUsers array
+            nameElement.textContent = habitMatrix[i][0];
+            streakElement.textContent = habitMatrix[i][1];
+        }
     }
 
 }

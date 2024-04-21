@@ -1,12 +1,131 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streak</title>
-    <link rel="stylesheet" href="/Users/advik.raju/Hackathon 2024/Hackathon/CSS/LeaderboardScreeen.css"> <!-- Link to your custom CSS file -->
+    <title>Leaderboard</title>
+    <style>
+        .column1 {
+            float: left;
+            width: 40%;
+            padding: 10px;
+            border-style: solid;
+            height: 500px;
+            padding-left: 30px;
+
+        }
+
+        .column2 {
+            float: right;
+            width: 40%;
+            padding: 10px;
+            border-style: solid;
+            height: 500px;
+            padding-left: 30px;
+
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            height: 500px;
+            padding: 100px;
+        }
+
+        .gap {
+            width: 20%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .checkboxLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+
+        .pointsLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            float: right;
+        }
+
+        .habitsList {
+            padding: 10px;
+        }
+
+        .addNewDailyHabitButton {
+            padding-top: 10px;
+            width:20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .site-header {
+            background-color: #292f37;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .main-nav ul {
+            list-style-type: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .main-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .bluetext {
+            color: #6ea9e4
+        }
+    </style>
+    
 </head>
 <body>
     <header class="site-header">
@@ -22,36 +141,48 @@
                                 width="20" height="20"> Leaderboard</a></li>
                     <li><a href="#"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
                                 width="20" height="20"> Streak</a></li>
+                    <li id="streak_display">#</li>
                     <script src="script.js"></script>
                 </ul>
             </nav>
         </div>
     </header>
-    <h1>Streaks</h1>
+    <h2>
+        <img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
+        width="75"
+        height="75">
+        Streaks
+        <img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
+        width="75"
+        height="75">
+    </h2>
     <table>
         <thead>
             <tr>
+                <th>Rank</th>
                 <th>Streak</th>
                 <th>Habit</th>
-
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td id="habit_streak1"><span class="circle">1</span></td>
+                <td><span class="circle">1</span></td>
+                <td id="habit_streak1">#</td>
                 <td id="habit_name1">#</td>
             </tr>
             <tr>
-                <td id="habit_streak2"><span class="circle">1</span></td>
+                <td><span class="circle">2</span></td>
+                <td id="habit_streak2">#</td>
                 <td id="habit_name2">#</td>
             </tr>
             <tr>
-                <td id="habit_streak3"><span class="circle">1</span></td>
+                <td><span class="circle">3</span></td>
+                <td id="habit_streak3">#</td>
                 <td id="habit_name3">#</td>
             </tr>
+           
+            <script src="../script.js"></script>
         </tbody>
     </table>
-    <script src="../script.js"></script>
 </body>
 </html>
-
