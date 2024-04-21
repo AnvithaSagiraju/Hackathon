@@ -70,14 +70,14 @@ function leaderbord(){
 
 
     for (var i = 0; i < 5; i++) {
-    var leaderName = document.getElementById("leaderboard_name" + (i + 1));
-    var leaderScore = document.getElementById("leaderboard_score" + (i + 1));
+        var leaderName = document.getElementById("leaderboard_name" + (i + 1));
+        var leaderScore = document.getElementById("leaderboard_score" + (i + 1));
 
-    if (leaderName && leaderScore) {
-        // Update leaderboard name and score based on otherUsers array
-        leaderName.textContent = otherUsers[i][0];
-        leaderScore.textContent = otherUsers[i][1];
+        if (leaderName && leaderScore) {
+            // Update leaderboard name and score based on otherUsers array
+            leaderName.textContent = otherUsers[i][0];
+            leaderScore.textContent = otherUsers[i][1];
+        }
     }
-}
     //IF SHOUTOUT BUTTON CLICKED, GIVE NOTIFICATION "You gave your friend a shoutout!"
 }
