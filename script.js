@@ -9,17 +9,19 @@ var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attend
 var displayPoints = document.getElementById("point_display");
 displayPoints.textContent = userPoints;
 
-var displayStreak = document.getElementById("streak_display");
+/*var displayStreak = document.getElementById("streak_display");
 displayStreak.textContent = userStreak;
-//HABITS
+//HABITS*/
 
 leaderboard();
 streakDisplay();
+updateHabitStreakAndPoints();
+streakCheck();
+
 
 
 //when user clicks add habit -- this will be a STRING
 function addHabit(newHabit){
-    //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
     habitMatrix.push([newHabit, 0]);
 }
 
@@ -45,10 +47,8 @@ function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
         var streakElement = document.getElementById("habit_streak" + (i + 1));
-        //streakElement.textContent = habitMatrix[i][1];
     
         var nameElement = document.getElementById("habit_name" + (i + 1));
-        //nameElement.textContent = habitMatrix[i][0];
 
         if (streakElement && nameElement) {
             // Update leaderboard name and score based on otherUsers array
@@ -59,7 +59,6 @@ function streakDisplay(){
 }
 //when user clicks add habit -- this will be a STRING
 function addWeeklyHabit(newHabit){
-    //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
     weeklyHabitMatrix.push([newHabit, 0]);
 }
 
@@ -100,7 +99,7 @@ async function todaysDate(){
 function streakCheck(){
     for(var i = 0; i < habitMatrix.length; i++){
         if(habitMatrix[i][1]%7 == 0){
-            var streak = habit
+            //var streak = habit;
             //USE HTML TO PRINT NOTIFICATION "Congrats! You hit a [streak] day streak with a habit! +15 points"
             userPoints += 15;
         }
