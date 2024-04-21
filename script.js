@@ -69,29 +69,15 @@ function leaderbord(){
     otherUsers.sort((a, b) => b[1] - a[1]);
 
 
-    var leader1 = document.getElementById("leaderboard_name1");
-    leader1.textContent = otherUsers[0][0];
-    var leader1S = document.getElementById("leaderboard_score1");
-    leader1S.textContent = otherUsers[0][1];
+    for (var i = 0; i < 5; i++) {
+    var leaderName = document.getElementById("leaderboard_name" + (i + 1));
+    var leaderScore = document.getElementById("leaderboard_score" + (i + 1));
 
-    var leader2 = document.getElementById("leaderboard_name2");
-    leader2.textContent = otherUsers[1][0];
-    var leader2S = document.getElementById("leaderboard_score2");
-    leader2S.textContent = otherUsers[1][1];
-
-    var leader3 = document.getElementById("leaderboard_name3");
-    leader3.textContent = otherUsers[2][0];
-    var leader3S = document.getElementById("leaderboard_score3");
-    leader3S.textContent = otherUsers[2][1];
-
-    var leader4 = document.getElementById("leaderboard_name4");
-    leader4.textContent = otherUsers[3][0];
-    var leader4S = document.getElementById("leaderboard_score4");
-    leader4S.textContent = otherUsers[3][1];
-
-    var leader5 = document.getElementById("leaderboard_name5");
-    leader5.textContent = otherUsers[4][0];
-    var leader5S = document.getElementById("leaderboard_score5");
-    leader5S.textContent = otherUsers[4][1];
+    if (leaderName && leaderScore) {
+        // Update leaderboard name and score based on otherUsers array
+        leaderName.textContent = otherUsers[i][0];
+        leaderScore.textContent = otherUsers[i][1];
+    }
+}
     //IF SHOUTOUT BUTTON CLICKED, GIVE NOTIFICATION "You gave your friend a shoutout!"
 }
