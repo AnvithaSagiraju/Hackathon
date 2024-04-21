@@ -8,7 +8,7 @@ displayStreak.textContent = userPoints;
 //HABITS STUFF
 
 leaderboard();
-streakDisplay();
+//streakDisplay();
 
 //when user clicks add habit -- this will be a STRING
 function addHabit(newHabit){
@@ -34,7 +34,7 @@ function updateHabitStreakAndPoints(habit){
     }
 }
 
-function streakDisplay(){
+//function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
         var streakElement = document.getElementById("habit_streak" + (i + 1));
@@ -44,7 +44,7 @@ function streakDisplay(){
         nameElement.textContent = habitMatrix[i][0];
     }
 
-}
+//}
 
 //to display date on website
 async function todaysDate(){
@@ -77,7 +77,7 @@ function streakCheck(){
 
 //this makes the array of other users ordered from least to greatest in order of points
 //use HTML to print these (access these somehow?)
-function leaderbord(){
+function leaderboard(){
     otherUsers.push(["User", userPoints]);
     otherUsers.sort((a, b) => b[1] - a[1]);
 
