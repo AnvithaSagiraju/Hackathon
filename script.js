@@ -1,12 +1,16 @@
 var userPoints = 0;
-var userName = "";
+var userStreak = 0;
+var userName = document.getElementById("textInput");
 var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130]];
 var weeklyHabitMatrix = [["Did the laundry", 0], ["Took out trash", 0], ["Attended a school seminar", 0]];
 
 
+var displayPoints = document.getElementById("point_display");
+displayPoints.textContent = userPoints;
+
 var displayStreak = document.getElementById("streak_display");
-displayStreak.textContent = userPoints;
+displayStreak.textContent = userStreak;
 //HABITS
 
 leaderboard();

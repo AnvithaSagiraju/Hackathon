@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header with Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/Users/advik.raju/Hackathon 2024/Hackathon/CSS/HomeScreen.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">Routine<span class="bluetext">Sync</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"><img
+                                src="https://static-00.iconduck.com/assets.00/white-heavy-check-mark-emoji-512x512-6d5z9les.png"
+                                width="20" heigth="20"> Habits</a></li>
+                    <li><a href="#"><img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
+                                width="20" height="20"> Leaderboard</a></li>
+                    <li><a href="#"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
+                                width="20" height="20"> Streak</a></li>
+                    <li id="streak_display">#</li>
+                    <li><a href="#"><img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
+                        width="25" height="25"> Points</a></li>
+                    <li id="point_display">#</li>
+                    <script src="script.js"></script>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="textcontainer">
+        <div class="content">
+            <h1>Welcome to <span class="whitetext">Routine </span><span class="bluetext">Sync</span></h1>
+            <a href="#" class="btn">Start Setting Up Your Habits</a>
+        </div>
+        <div class="sidebar">
+            <h2>Get Started</h2>
+            <h3>Enter Your Name Here:</h3>
+            <div class="inputcontainer">
+                <input type="text" id="textInput" placeholder="(First Last)">
+            </div>
+            <h2>How To Use Routine Sync</h2>
+            <ul>
+                <li>
+                    <img src="https://static-00.iconduck.com/assets.00/white-heavy-check-mark-emoji-512x512-6d5z9les.png"
+                    width="20" heigth="20"> Add habits that you want to master to your list
+                </li>
+                <li>
+                    <img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
+                        width="25" height="25"> Earn points for completed habits
+                </li>
+                <li>
+                    <img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
+                    width="20" height="20"> Keep your streak alive by working onyour habits every day
+                </li>
+                <li>
+                    <img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
+                    width="20" height="20"> Compete against your friends for spots on the Leaderboard!
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
