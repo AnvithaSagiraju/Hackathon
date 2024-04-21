@@ -7,7 +7,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header with Icons</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="/Users/advik.raju/Hackathon 2024/Hackathon/CSS/HomeScreen.css">
+    <style>
+        .column1 {
+            float: left;
+            width: 40%;
+            padding: 20px;
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 20px;
+            border-color: #cacaca;
+            height: 520px;
+            padding-left: 30px;
+
+        }
+
+        .column2 {
+            float: right;
+            width: 40%;
+            padding: 20px;
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 20px;
+            border-color: #cacaca;
+            height: 520px;
+            padding-left: 30px;
+
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            height: 500px;
+            padding: 100px;
+        }
+
+        .gap {
+            width: 20%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .checkboxLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding-left: 20px;
+        }
+
+        .pointsLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            float: right;
+        }
+
+        .habitsList {
+            padding: 10px;
+        }
+
+        .newDailyHabitButton {
+            margin-left: 18%;
+            border-radius: 15px;
+            border-width: 2px;
+            font-size: 20px;
+            background-color: #292f37;
+            color: #fff;
+            width: 300px;
+            height: 50px;
+        }
+
+        .addNewDailyHabitButton {
+            display: inline;
+            border-width: 2px;
+            margin-left: 20px;
+            width: 50px;
+            height: 30px;
+            color:#292f37;
+        }
+
+        .addNewDailyHabitButton:hover {
+            color: #928e8e;
+        }
+
+        .habitInputBox {
+            margin-top: 18px;
+            margin-left: 6%;
+            width:300px;
+            height: 30px;
+        }
+
+        .newDailyHabitButton:hover {
+            background-color: #fff;
+            /* Green */
+            color: #292f37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .site-header {
+            background-color: #292f37;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .main-nav ul {
+            list-style-type: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .main-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .bluetext {
+            color: #6ea9e4
+        }
+
+
+    </style>
 </head>
 
 <body>
