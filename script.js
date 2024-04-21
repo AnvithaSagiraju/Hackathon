@@ -1,14 +1,15 @@
 var userPoints = 0;
 var userName = "";
 var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
-var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Billy", 125], ["Sam", 130]];
+var otherUsers = [["Bob", 20], ["Joe", 25], ["Billy", 125], ["Sam", 130]];
 
 var displayStreak = document.getElementById("streak_display");
 displayStreak.textContent = userPoints;
-//HABITS STUFF
+//HABITS
 
-//leaderboard();
-//streakDisplay();
+leaderboard();
+streakDisplay();
+
 
 //when user clicks add habit -- this will be a STRING
 function addHabit(newHabit){
@@ -34,7 +35,7 @@ function updateHabitStreakAndPoints(habit){
     }
 }
 
-//function streakDisplay(){
+function streakDisplay(){
 
     for (var i = 0; i < habitMatrix.length; i++) {
         var streakElement = document.getElementById("habit_streak" + (i + 1));
@@ -44,7 +45,7 @@ function updateHabitStreakAndPoints(habit){
         nameElement.textContent = habitMatrix[i][0];
     }
 
-//}
+}
 
 //to display date on website
 async function todaysDate(){
@@ -76,7 +77,7 @@ function streakCheck(){
 //LEADERBOARD
 
 //this makes the array of other users ordered from least to greatest in order of points
-//use HTML to print these (access these somehow?)
+//FUNCTION CALLED ABOVE
 function leaderboard(){
     otherUsers.push(["User", userPoints]);
     otherUsers.sort((a, b) => b[1] - a[1]);
@@ -85,12 +86,13 @@ function leaderboard(){
     for (var i = 0; i < 5; i++) {
         var leaderName = document.getElementById("leaderboard_name" + (i + 1));
         var leaderScore = document.getElementById("leaderboard_score" + (i + 1));
-
+    
         if (leaderName && leaderScore) {
             // Update leaderboard name and score based on otherUsers array
             leaderName.textContent = otherUsers[i][0];
             leaderScore.textContent = otherUsers[i][1];
         }
     }
+
     //IF SHOUTOUT BUTTON CLICKED, GIVE NOTIFICATION "You gave your friend a shoutout!"
 }
