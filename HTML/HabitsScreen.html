@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <style>
+        
+        body {
+            background-image: url("https://wallpapercave.com/wp/VefkydU.jpg");
+        }
+
         .column1 {
             float: left;
             width: 40%;
@@ -276,6 +281,7 @@
 
         function updateWeeklyHabits() {
             addWeeklyHabit(getWeeklyHabitText());
+            habitMatrix.push([getHabitText(), 0]);
             const checkboxes = document.getElementById("habitsCheckboxes");
             checkboxes.innerHTML = "";
             const weeklyCheckboxes = document.getElementById("weeklyHabitsCheckboxes");
@@ -285,7 +291,7 @@
     </script>
 </head>
 
-<body onload="displayHabits()" ; style="background-color: #0f2958">
+<body onload="displayHabits()">
 
     <header class="site-header">
         <div class="container">
@@ -299,7 +305,7 @@
                                 width="20" heigth="20"> Habits</a></li>
                     <li><a href="./LeaderboardScreen.html"><img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
                                 width="20" height="20"> Leaderboard</a></li>
-                    <li><a href="StreaksScreen.html"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
+                    <li><a href="./StreaksScreen.html"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
                                 width="20" height="20"> Streak</a></li>
                     <li><img src="https://cdn3.emoji.gg/emojis/9637_gold_coin.png"
                         width="25" height="25"> Points</li>
