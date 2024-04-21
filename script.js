@@ -73,16 +73,6 @@ function updateWeeklyHabitStreakAndPoints(habit){
     }
 }
 
-//to display date on website
-async function todaysDate(){
-    var api = await fetch("http://worldclockapi.com/api/json/pst/now");
-    var apiData = await api.json();
-    var time = apiData.currentDateTime;
-    var month = time.slice(5,7);
-    var day = time.slice(8,10);
-    var date = month + ", " + day;
-    return date;
-}
 
 
 
