@@ -8,6 +8,7 @@ displayStreak.textContent = userPoints;
 //HABITS
 
 leaderboard();
+streakDisplay();
 
 //when user clicks add habit -- this will be a STRING
 function addHabit(newHabit){
@@ -31,6 +32,18 @@ function updateHabitStreakAndPoints(habit){
             habitMatrix[i][1] += 1; 
         }     
     }
+}
+
+function streakDisplay(){
+
+    for (var i = 0; i < habitMatrix.length; i++) {
+        var streakElement = document.getElementById("habit_streak" + (i + 1));
+        streakElement.textContent = habitMatrix[i][1];
+    
+        var nameElement = document.getElementById("habit_name" + (i + 1));
+        nameElement.textContent = habitMatrix[i][0];
+    }
+
 }
 
 //to display date on website
