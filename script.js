@@ -1,6 +1,6 @@
 var userPoints = 0;
 var userName = "";
-var habitMatrix = [];
+var habitMatrix = [["Met sleep goal", 0], ["Exercised 30 minutes", 0], ["Studied 1 hour for Math", 0]];
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Billy", 125], ["Sam", 130]];
 
 var displayStreak = document.getElementById("streak_display");
@@ -9,10 +9,14 @@ displayStreak.textContent = userPoints;
 
 
 //when user clicks add habit -- this will be a STRING
-function addHabit(){
+function addHabit(newHabit){
     //for line9 you need an HTML variable called habitInput for the habit the user wants, and when the user clicks "save" this function should be called
-    const newHabit = document.getElementById('habitInput').value 
     habitMatrix.push([newHabit, 0]);
+}
+
+//returns the list of user's habits
+function getHabits(){
+    return habitMatrix;
 }
 
 //when the checkbox for a habit is clicked, to update habit streak and points

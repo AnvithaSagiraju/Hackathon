@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .column1 {
+            float: left;
+            width: 40%;
+            padding: 10px;
+            border-style: solid;
+            height: 500px;
+            padding-left: 30px;
+
+        }
+
+        .column2 {
+            float: right;
+            width: 40%;
+            padding: 10px;
+            border-style: solid;
+            height: 500px;
+            padding-left: 30px;
+
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            height: 500px;
+            padding: 100px;
+        }
+
+        .gap {
+            width: 20%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .checkboxLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+
+        .pointsLabel {
+            font-size: 20px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            float: right;
+        }
+
+        .habitsList {
+            padding: 10px;
+        }
+
+        .addNewDailyHabitButton {
+            padding-top: 10px;
+            width:
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .site-header {
+            background-color: #292f37;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .main-nav ul {
+            list-style-type: none;
+        }
+
+        .main-nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .main-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .main-nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .bluetext {
+            color: #6ea9e4
+        }
+    </style>
+    <script src="../script.js"></script>
+    <script>
+        function displayHabits() {
+            const habits = getHabits();
+            const checkboxes = document.getElementById("habitsCheckboxes");
+            habits.forEach(function (habit) {
+                const container = document.createElement("div");
+                container.setAttribute("class", "habitsList");
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.setAttribute("id", "taskCheckbox");
+                checkbox.value = habit[0];
+                const checkboxLabel = document.createElement("label");
+                checkboxLabel.setAttribute("for", "taskCheckbox");
+                checkboxLabel.setAttribute("class", "checkboxLabel");
+                checkboxLabel.innerText = habit[0];
+                const pointsLabel = document.createElement("label");
+                pointsLabel.innerText = " (+5 points)";
+                pointsLabel.setAttribute("class", "pointsLabel");
+                container.appendChild(checkbox);
+                container.appendChild(checkboxLabel);
+                container.appendChild(pointsLabel);
+                checkboxes.appendChild(container);
+                const linebreak = document.createElement("br");
+                checkboxes.appendChild(linebreak);
+            })
+        }
+
+        function habitAddButton() {
+
+            const dailyTasksContainer = document.getElementById("boxAndButton");
+            const habitInputBox = document.createElement("input");
+            habitInputBox.type = "text";
+            habitInputBox.id = "habitInputBox";
+            const addButton = document.createElement("button");
+            addButton.type = "button";
+            addButton.value = "Add";
+            addButton.setAttribute("onclick", "updateHabits()");
+            dailyTasksContainer.appendChild(habitInputBox);
+            dailyTasksContainer.appendChild(addButton);
+        }
+
+        function getHabitText() {
+            const newHabit = document.getElementById("habitInputBox");
+            return newHabit.value;
+        }
+
+        function updateHabits() {
+            addHabit(getHabitText());
+            const checkboxes = document.getElementById("habitsCheckboxes");
+            checkboxes.innerHTML = "";
+            displayHabits();
+        }
+    </script>
+</head>
+
+<body onload="displayHabits()">
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo">Routine<span class="bluetext">Sync</span></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#"><img
+                                src="https://static-00.iconduck.com/assets.00/white-heavy-check-mark-emoji-512x512-6d5z9les.png"
+                                width="20" heigth="20"> Habits</a></li>
+                    <li><a href="#"><img src="https://images.emojiterra.com/google/android-12l/512px/1f3c6.png"
+                                width="20" height="20"> Leaderboard</a></li>
+                    <li><a href="#"><img src="https://static-00.iconduck.com/assets.00/fire-emoji-402x512-8ma95d17.png"
+                                width="20" height="20"> Streak</a></li>
+                    <li id="streak_display">#</li>
+                    <script src="script.js"></script>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="row">
+        <div class="column1" style="background-color:#aaa;">
+            <h2><u>Today I. . .</u></h2>
+            <div id="habitsCheckboxes"></div>
+
+            <button type="button" onclick="habitAddButton()">Add New Daily Habit</button>
+            <div id="boxAndButton" class="addNewDailyHabitButton">
+
+            </div>
+        </div>
+
+
+        <div class="column2" style="background-color:#bbb;">
+            <h2><u>This Week I. . .</u></h2>
+            <p>Some text..</p>
+        </div>
+    </div>
+</body>
+
+</html>
