@@ -3,6 +3,8 @@ var userName = "";
 var habitMatrix = [];
 var otherUsers = [["Bob", 20], ["Joe", 25], ["Sophia", 80], ["Mary", 110], ["Billy", 125], ["Sam", 130]];
 
+var displayStreak = document.getElementById("streak_display");
+displayStreak.textContent = userPoints;
 //HABITS
 
 
