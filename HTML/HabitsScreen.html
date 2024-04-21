@@ -3,13 +3,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .column1 {
             float: left;
             width: 40%;
-            padding: 10px;
+            padding: 20px;
             border-style: solid;
-            height: 500px;
+            border-width: 5px;
+            border-radius: 20px;
+            border-color: #cacaca;
+            height: 520px;
             padding-left: 30px;
 
         }
@@ -17,11 +21,19 @@
         .column2 {
             float: right;
             width: 40%;
-            padding: 10px;
+            padding: 20px;
             border-style: solid;
-            height: 500px;
+            border-width: 5px;
+            border-radius: 20px;
+            border-color: #cacaca;
+            height: 520px;
             padding-left: 30px;
 
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
         }
 
         .row:after {
@@ -46,13 +58,14 @@
         h2 {
             text-align: center;
             font-size: 50px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
+            color: #fff;
         }
 
         .checkboxLabel {
             font-size: 20px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-weight: bold;
+            padding-left: 20px;
         }
 
         .pointsLabel {
@@ -65,9 +78,41 @@
             padding: 10px;
         }
 
+        .newDailyHabitButton {
+            margin-left: 18%;
+            border-radius: 15px;
+            border-width: 2px;
+            font-size: 20px;
+            background-color: #292f37;
+            color: #fff;
+            width: 300px;
+            height: 50px;
+        }
+
         .addNewDailyHabitButton {
-            padding-top: 10px;
-            width:
+            display: inline;
+            border-width: 2px;
+            margin-left: 20px;
+            width: 50px;
+            height: 30px;
+            color:#292f37;
+        }
+
+        .addNewDailyHabitButton:hover {
+            color: #928e8e;
+        }
+
+        .habitInputBox {
+            margin-top: 18px;
+            margin-left: 6%;
+            width: 300px;
+            height: 30px;
+        }
+
+        .newDailyHabitButton:hover {
+            background-color: #fff;
+            /* Green */
+            color: #292f37;
         }
 
         * {
@@ -123,6 +168,8 @@
         .bluetext {
             color: #6ea9e4
         }
+
+
     </style>
     <script src="../script.js"></script>
     <script>
@@ -135,6 +182,7 @@
                 const checkbox = document.createElement("input");
                 checkbox.type = "checkbox";
                 checkbox.setAttribute("id", "taskCheckbox");
+                checkbox.setAttribute("class", "checkbox");
                 checkbox.value = habit[0];
                 const checkboxLabel = document.createElement("label");
                 checkboxLabel.setAttribute("for", "taskCheckbox");
@@ -150,17 +198,43 @@
                 const linebreak = document.createElement("br");
                 checkboxes.appendChild(linebreak);
             })
-        }
+
+            const weeklyHabits = getWeeklyHabits();
+            const weeklyCheckboxes = document.getElementById("weeklyHabitsCheckboxes");
+            weeklyHabits.forEach(function (habit) {
+                const container = document.createElement("div");
+                container.setAttribute("class", "habitsList");
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.setAttribute("id", "weeklyTaskCheckbox");
+                checkbox.setAttribute("class", "checkbox");
+                checkbox.value = habit[0];
+                const checkboxLabel = document.createElement("label");
+                checkboxLabel.setAttribute("for", "weeklyTaskCheckbox");
+                checkboxLabel.setAttribute("class", "checkboxLabel");
+                checkboxLabel.innerText = habit[0];
+                const pointsLabel = document.createElement("label");
+                pointsLabel.innerText = " (+10 points)";
+                pointsLabel.setAttribute("class", "pointsLabel");
+                container.appendChild(checkbox);
+                container.appendChild(checkboxLabel);
+                container.appendChild(pointsLabel);
+                weeklyCheckboxes.appendChild(container);
+                const linebreak = document.createElement("br");
+                weeklyCheckboxes.appendChild(linebreak);
+            })
+        }    
 
         function habitAddButton() {
-
             const dailyTasksContainer = document.getElementById("boxAndButton");
             const habitInputBox = document.createElement("input");
             habitInputBox.type = "text";
             habitInputBox.id = "habitInputBox";
+            habitInputBox.setAttribute("class", "habitInputBox");
             const addButton = document.createElement("button");
             addButton.type = "button";
-            addButton.value = "Add";
+            addButton.innerText = "Add";
+            addButton.setAttribute("class", "addNewDailyHabitButton");
             addButton.setAttribute("onclick", "updateHabits()");
             dailyTasksContainer.appendChild(habitInputBox);
             dailyTasksContainer.appendChild(addButton);
@@ -175,12 +249,43 @@
             addHabit(getHabitText());
             const checkboxes = document.getElementById("habitsCheckboxes");
             checkboxes.innerHTML = "";
+            const weeklyCheckboxes = document.getElementById("weeklyHabitsCheckboxes");
+            weeklyCheckboxes.innerHTML = "";            
+            displayHabits();
+        }
+
+        function weeklyHabitAddButton() {
+            const dailyTasksContainer = document.getElementById("weeklyBoxAndButton");
+            const habitInputBox = document.createElement("input");
+            habitInputBox.type = "text";
+            habitInputBox.id = "weeklyHabitInputBox";
+            habitInputBox.setAttribute("class", "habitInputBox");
+            const addButton = document.createElement("button");
+            addButton.type = "button";
+            addButton.innerText = "Add";
+            addButton.setAttribute("class", "addNewDailyHabitButton");
+            addButton.setAttribute("onclick", "updateWeeklyHabits()");
+            dailyTasksContainer.appendChild(habitInputBox);
+            dailyTasksContainer.appendChild(addButton);
+        }
+
+        function getWeeklyHabitText() {
+            const newHabit = document.getElementById("weeklyHabitInputBox");
+            return newHabit.value;
+        }
+
+        function updateWeeklyHabits() {
+            addWeeklyHabit(getWeeklyHabitText());
+            const checkboxes = document.getElementById("habitsCheckboxes");
+            checkboxes.innerHTML = "";
+            const weeklyCheckboxes = document.getElementById("weeklyHabitsCheckboxes");
+            weeklyCheckboxes.innerHTML = "";
             displayHabits();
         }
     </script>
 </head>
 
-<body onload="displayHabits()">
+<body onload="displayHabits()" ; style="background-color: #0f2958">
 
     <header class="site-header">
         <div class="container">
@@ -203,20 +308,25 @@
     </header>
 
     <div class="row">
-        <div class="column1" style="background-color:#aaa;">
+        <div class="column1" style="background-color: #6ea9e4">
             <h2><u>Today I. . .</u></h2>
+            <br>
+            <br>
             <div id="habitsCheckboxes"></div>
-
-            <button type="button" onclick="habitAddButton()">Add New Daily Habit</button>
-            <div id="boxAndButton" class="addNewDailyHabitButton">
-
-            </div>
+            <br>
+            <button type="button" onclick="habitAddButton()" class="newDailyHabitButton"><i class="fa fa-plus"></i> Add New Daily Habit</button>
+            <div id="boxAndButton" class="addNewDailyHabitButton"></div>
         </div>
 
 
-        <div class="column2" style="background-color:#bbb;">
+        <div class="column2" style="background-color: #6ea9e4">
             <h2><u>This Week I. . .</u></h2>
-            <p>Some text..</p>
+            <br>
+            <br>
+            <div id="weeklyHabitsCheckboxes"></div>
+            <br>
+            <button type="button" onclick="weeklyHabitAddButton()" class="newDailyHabitButton"><i class="fa fa-plus"></i> Add New Weekly Habit</button>
+            <div id="weeklyBoxAndButton" class="addNewDailyHabitButton"></div>
         </div>
     </div>
 </body>
